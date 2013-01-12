@@ -1,0 +1,18 @@
+[include]
+	path = /Users/dsyang/dotfiles/config-files/github.cred
+[code]
+	editor = vim
+[color]
+	ui = true
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	d = diff
+	hist = log --pretty=format:\" %h %ad | %s%d [%an]\" --graph --date=short -n 8
+	histall = log --pretty=format:\" %h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-tile -t
+	dump = cat-file -p
+[core]
+	pager = less -X -F
