@@ -75,7 +75,11 @@
 (global-linum-mode)
 
 ;; adds vertical line at the 80 character mark
+(setq fci-rule-color "brightred")
 (add-hook 'prog-mode-hook 'fci-mode)
+
+;; clojure-mode paredit
+(add-hook 'clojure-mode-hook 'paredit-mode)
 
 (ido-mode t)
 ;; cool features in minibuffer
@@ -99,6 +103,10 @@
 (setq TeX-output-view-style
       (quote
        (("^pdf$" "." "open %o"))))
+(setq TeX-PDF-mode t)
+
+;; Haskell mode indentation
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ;; undo-tree makes your changes a tree
 (require 'undo-tree)
@@ -149,8 +157,6 @@
 ;; C-x r j a, restore window config in register 'a'
 
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Self-defined functions
 ;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -178,18 +184,26 @@
 
 (defun my-disable-arrow-keys ()
   (interactive)
-  (global-set-key (kbd "<up>") (lambda ()
-                                 (interactive)
-                                 (message "Arrow key navigation is disabled. Use C-p instead.")))
-  (global-set-key (kbd "<down>") (lambda ()
-                                   (interactive)
-                                   (message "Arrow key navigation is disabled. Use C-n instead.")))
-  (global-set-key (kbd "<left>") (lambda ()
-                                   (interactive)
-                                   (message "Arrow key navigation is disabled. Use C-b instead.")))
-  (global-set-key (kbd "<right>") (lambda ()
-                                    (interactive)
-                                    (message "Arrow key navigation is disabled. Use C-f instead.")))
+  (global-set-key
+	 (kbd "<up>")
+	 (lambda ()
+		 (interactive)
+		 (message "Arrow key navigation is disabled. Use C-p instead.")))
+  (global-set-key
+	 (kbd "<down>")
+	 (lambda ()
+		 (interactive)
+		 (message "Arrow key navigation is disabled. Use C-n instead.")))
+  (global-set-key
+	 (kbd "<left>")
+	 (lambda ()
+		 (interactive)
+		 (message "Arrow key navigation is disabled. Use C-b instead.")))
+  (global-set-key
+	 (kbd "<right>")
+	 (lambda ()
+		 (interactive)
+		 (message "Arrow key navigation is disabled. Use C-f instead.")))
   (set-face-foreground 'modeline "default")
 )
 (custom-set-variables
@@ -197,7 +211,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75" default))))
+ '(custom-safe-themes
+	 (quote ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879"
+					 "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4"
+					 "27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75"
+					 default)))
+ '(fci-rule-color "red"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
