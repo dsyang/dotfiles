@@ -45,6 +45,12 @@ bindkey "^[[3~" delete-char
 
 
 #########
+## tex
+#########
+PATH="/usr/texbin:$PATH"
+
+
+#########
 ## sml
 #########
 PATH="/usr/local/smlnj/bin:$PATH"   #MAC
@@ -102,5 +108,3 @@ else
     echo "Starting tmux...";
     tmux;
 fi
-
-

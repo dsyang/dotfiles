@@ -32,7 +32,7 @@
 (add-to-list 'default-frame-alist '(width . 155))
 
 ;; Set the default font
-(set-face-attribute 'default nil :font "Inconsolata" :height 160)
+(set-face-attribute 'default nil :height 140)
 
 ;; turn on font-lock mode (syntax highlighting)
 (global-font-lock-mode t)
@@ -133,6 +133,13 @@
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 ;; set latex open program
+;; setup path to find texbin
+(setenv "PATH"
+        (concat
+         "/usr/texbin" ":"
+
+         (getenv "PATH")))
+
 (setq TeX-output-view-style
       (quote
        (("^pdf$" "." "open %o"))))
