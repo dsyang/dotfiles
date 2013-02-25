@@ -1,0 +1,10 @@
+echo $PATH
+ls
+emacs github.cred
+ls /use/local/sbin
+ls /usr/local/sbin
+ls /usr/local/bin
+ls /opt/local/bin
+clear
+ls
+j git
