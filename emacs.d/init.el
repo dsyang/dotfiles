@@ -1,3 +1,4 @@
+
 ;; emacs initialization file for dsyang.
 ;; Snippets stolen from emacs prelude
 
@@ -16,13 +17,22 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-
+(menu-bar-mode -1)
 ;; get the good package list
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
+
+;; Set the default size when working in window mode
+(add-to-list 'default-frame-alist '(left . 0))
+(add-to-list 'default-frame-alist '(top . 0))
+(add-to-list 'default-frame-alist '(height . 50))
+(add-to-list 'default-frame-alist '(width . 155))
+
+;; Set the default font
+(set-face-attribute 'default nil :font "Inconsolata" :height 160)
 
 ;; turn on font-lock mode (syntax highlighting)
 (global-font-lock-mode t)
@@ -50,7 +60,8 @@
 (setq-default save-place t)
 (require 'saveplace)
 
-
+;; no tabs only spaces
+;;(set indent-tabs-mode nil)
 ;;set tab with to 2 for all buffers
 (setq-default tab-width 2)
 ;;show column number on status bar
@@ -67,7 +78,7 @@
 
 ;; highlight the current line
 (global-hl-line-mode +1)
-(set-face-background 'hl-line "cyan")
+(set-face-background 'hl-line "dark cyan")
 
 ;; show line numbers on the left margin
 (setq linum-format "%4d| ")
@@ -90,14 +101,36 @@
       ido-max-prospects 10
       ido-default-file-method 'selected-window)
 
-(require 'rainbow-delimiters)
 ;; colors different levels of parentheses
+(require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; text expansion snippets
 (require 'yasnippet)
 (yas--initialize)
-(yas/load-directory "~/.emacs.d/elpa/yasnippet-20121225.430/snippets")
+(yas/load-directory "~/.emacs.d/elpa/yasnippet-20130218.2229/snippets")
+
+(add-hook 'js2-mode-hook 'my-jshtml-hook)
+
+(defun my-jshtml-hook ()
+  (interactive)
+  (setq intent-tabs-mode nil)
+)
+
+;; scala mode stuff
+(require 'scala-mode2)
+(add-hook 'scala-mode-hook '(lambda ()
+                              (setq scala-indent:indent-value-expression t
+                                    scala-indent:align-parameters t
+                                    scala-indent:align-forms t
+                                    )
+                              )
+)
+;; start ensime
+(add-to-list 'load-path "~/.emacs.d/ensime_2.10.0-0.9.8.8/elisp")
+(require 'ensime)
+;;start ensime when scala mode starts
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 ;; set latex open program
 (setq TeX-output-view-style
@@ -211,12 +244,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-	 (quote ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879"
-					 "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4"
-					 "27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75"
-					 default)))
- '(fci-rule-color "red"))
+ '(custom-safe-themes (quote ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75" default)))
+ '(fci-rule-color "red")
+ '(indent-tabs-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
