@@ -13,9 +13,9 @@ source $ZSH/oh-my-zsh.sh
 
 export DISABLE_AUTO_TITLE="true"
 
-source ~/.credentials
+#source ~/.credentials
 
-PATH="/Users/dsyang/bin:/usr/local/share/python:/usr/local/share/npm/bin:/Users/dsyang/Library/Haskell/bin::/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="~/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:$PATH"
 TZ="America/Detroit"
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
@@ -47,39 +47,38 @@ bindkey "^[[3~" delete-char
 #########
 ## tex
 #########
-PATH="/usr/texbin:$PATH"
+#PATH="/usr/texbin:$PATH"
 
 
 #########
 ## sml
 #########
-PATH="/usr/local/smlnj/bin:$PATH"   #MAC
-SMLNJ_HOME="/usr/local/smlnj"       #MAC
+#PATH="/usr/local/smlnj/bin:$PATH"   #MAC
+#SMLNJ_HOME="/usr/local/smlnj"       #MAC
 
-alias smlnj='rlwrap sml'
+#alias smlnj='rlwrap sml'
 
 #########
 ## emacsclient
 #########
 
-alias startemacs='/Applications/Emacs.app/Contents/MacOS/Emacs --daemon'
+alias startemacs='/usr/bin/emacs --daemon'
 alias emacs='emacsclient -t'
 function wmacs () {  emacsclient -c $@ &; }
-
 
 
 #########
 ## golang
 #########
-GOPATH=/Users/dsyang/dropbox/Code/golang
-export GOPATH
-PATH=$GOPATH/bin:$PATH
+#GOPATH=/Users/dsyang/dropbox/Code/golang
+#export GOPATH
+#PATH=$GOPATH/bin:$PATH
 
 
 #########
 ## RVM ##
 #########
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 
 
