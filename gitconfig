@@ -1,9 +1,12 @@
-[include]
-	path = /Users/dsyang/dotfiles/github.cred
+[user]
+	email = dsyang92@gmail.com
+	name = Dan Yang
 [code]
 	editor = vim
 [color]
 	ui = true
+[credential]
+	helper = cache
 [alias]
 	co = checkout
 	ci = commit
