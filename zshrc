@@ -104,6 +104,5 @@ fi
 if [ -n "${TMUX+2}" ]; then
     echo "Inside a Tmux session";
 else
-    echo "Starting tmux...";
-    tmux;
+    echo "TMUX NOT STARTED START TMUX";
 fi

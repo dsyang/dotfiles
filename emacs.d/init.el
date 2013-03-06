@@ -1,4 +1,3 @@
-
 ;; emacs initialization file for dsyang.
 ;; Snippets stolen from emacs prelude
 
@@ -161,7 +160,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;
 
 (global-set-key "\C-x\C-u" 'unto-tree-visualize)
-
 
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
