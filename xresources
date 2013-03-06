@@ -12,8 +12,8 @@ URxvt.geometry: 100x50
 URxvt*urgentOnBell: true
 URxvt.lineSpace: 1
 
-URxvt.background: Grey
-URxvt.foreground: Black
+URxvt.background: #1A1A1A
+URxvt.foreground: #A9A9A9
 
 ! Font settings
 Xft.autohint: 0
@@ -46,28 +46,28 @@ URxvt.font:xft:inconsolata:medium:size=12
 URxvt.boldFont:xft:inconsolata:medium:size=12
 
 ! -- Colors -- !
-!#include "/home/dsyang/config-files/xcolors/dark"
-!#include "/home/dsyang/config-files/xcolors/light"
-!#include "/home/dsyang/config-files/xcolors/low"
-!#include "/home/dsyang/config-files/xcolors/old"
-!#include "/home/dsyang/config-files/xcolors/soft"
-!#include "/home/dsyang/config-files/xcolors/washed"
-!#include "/home/dsyang/config-files/xcolors/bright"
-!#include "/home/dsyang/config-files/xcolors/lich"
-!#include "/home/dsyang/config-files/xcolors/rab"
-!#include "/home/dsyang/config-files/xcolors/reasons"
+!#include "/home/dsyang/dotfiles/xcolors/dark"
+!#include "/home/dsyang/dotfiles/xcolors/light"
+!#include "/home/dsyang/dotfiles/xcolors/low"
+!#include "/home/dsyang/dotfiles/xcolors/old"
+!#include "/home/dsyang/dotfiles/xcolors/soft"
+!#include "/home/dsyang/dotfiles/xcolors/washed"
+!#include "/home/dsyang/dotfiles/xcolors/bright"
+!#include "/home/dsyang/dotfiles/xcolors/lich"
+!#include "/home/dsyang/dotfiles/xcolors/rab"
+!#include "/home/dsyang/dotfiles/xcolors/reasons"
 #include "/home/dsyang/dotfiles/xcolors/zenburn"
 
 ! --  Extensions -- !
-URxvt.perl-ext-common: default,matcher,keyboard-select,url-select,clipboard
+URxvt.perl-ext-common: default,font-size, clipboard
 !URxvt.keysym.M-u: perl:url-select:select_next
 !URxvt.keysym.M-Escape: perl:keyboard-select:activate
 !URxvt.keysym.M-s: perl:keyboard-select:search
 !URxvt.matcher.button: 1
 !URxvt.matcher.rend.0: fg16 RS_Uline
-!URxvt.keysym.M-c:   perl:clipboard:copy
-!URxvt.keysym.M-v:   perl:clipboard:paste
-!URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 ! -- Xterm settings -- !
 xterm*toolBar: false
