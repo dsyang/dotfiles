@@ -5,3 +5,7 @@ emacs.d/elpa/archives
 emacs.d/saveplace
 *.elc
 .DS_Store
+*.o
+*.errors
+*.hi
+xmonad-x86_64-linux
