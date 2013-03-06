@@ -24,4 +24,6 @@ xrdb -merge .Xresources
 setxkbmap -option terminate:ctrl_alt_bksp
 xsetroot  -cursor_name left_ptr
 
+sudo VBoxClient-all &
+
 exec xmonad
