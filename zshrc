@@ -35,7 +35,7 @@ alias man='LC_ALL=C LANG=C man'
 alias ll='ls -al'
 alias ls='ls -G'
 alias freespace='df -H'
-##alias tmux='tmux attach'
+alias ta='tmux attach'
 alias sftp='rlwrap sftp'
 
 
@@ -82,10 +82,19 @@ function wmacs () {  emacsclient -c $@ &; }
 
 
 
+#########
+# LINUX: URxvt change font size
+#########
+
+function fsize () {
+printf '\33]50;%s%d\007' "xft:Inconsolata:size=" $1
+}
+
+
 
 ########### Code ##########
 ## - Makes sure you only start one emacs daemon
-## - Starts Tmux if it wasn't started
+## - Alert to start tmux if not started
 ###########################
 
 
