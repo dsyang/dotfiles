@@ -7,5 +7,4 @@ set -g status-left-length 40
 
 set-window-option -g window-status-fg blue
 
-set -g status-left '#[fg=blue]#H #[fg=black,bright]• #[fg=green]#(/Users/dsyang/.tmux.d/macscripts/batt/batt )#[default]'
-
+set -g status-left '#[fg=green]#(/Users/dsyang/.tmux.d/macscripts/batt/batt )#[default]'
