@@ -62,7 +62,7 @@ alias smlnj='rlwrap sml'
 ## emacsclient
 #########
 
-alias startemacs='/Applications/Emacs.app/Contents/MacOS/Emacs --daemon'
+alias startemacs='/usr/local/bin/emacs --daemon'
 alias emacs='emacsclient -t'
 function wmacs () {  emacsclient -c $@ &; }
 
@@ -76,11 +76,11 @@ export GOPATH
 PATH=$GOPATH/bin:$PATH
 
 
-#########
-## RVM ##
-#########
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+###########
+## autojump
+###########
 
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 
 
