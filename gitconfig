@@ -16,3 +16,6 @@
 	pager = less -X -F
 [credential]
 	helper = osxkeychain
+[user]
+	name = Dan Yang
+	email = dsyang@fb.com
