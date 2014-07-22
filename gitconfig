@@ -16,3 +16,5 @@
 	dump = cat-file -p
 [core]
 	pager = less -X -F
+[credential]
+	helper = osxkeychain

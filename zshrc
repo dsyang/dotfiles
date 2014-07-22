@@ -3,19 +3,17 @@
 #
 ######################################################################
 
-WORKON_HOME=~/.python-envs
-VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="clean"
-plugins=(virtualenvwrapper git autojump heroku)
+ZSH_THEME="lambda"
+plugins=(virtualenvwrapper git autojump heroku golang)
 
 source $ZSH/oh-my-zsh.sh
 
 export DISABLE_AUTO_TITLE="true"
-
+export COMPLETION_WAITING_DOTS="true"
 source ~/.credentials
 
-PATH="/Users/dsyang/bin:/usr/local/share/python:/usr/local/share/npm/bin:/Users/dsyang/Library/Haskell/bin::/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="/Users/dsyang/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 TZ="America/Detroit"
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
@@ -62,26 +60,77 @@ alias smlnj='rlwrap sml'
 ## emacsclient
 #########
 
-alias startemacs='/Applications/Emacs.app/Contents/MacOS/Emacs --daemon'
+alias startemacs='/usr/local/bin/emacs --daemon'
 alias emacs='emacsclient -t'
-function wmacs () {  emacsclient -c $@ &; }
 
+########
+## sbcl
+########
+alias sbcl='rlwrap /usr/local/bin/sbcl'
+
+#######
+## tmux
+#######
+
+alias starttmux='tmux attach-session'
 
 
 #########
 ## golang
 #########
 GOPATH=/Users/dsyang/dropbox/Code/golang
+PATH=/usr/local/go/bin:$PATH
 export GOPATH
 PATH=$GOPATH/bin:$PATH
 
+setup440() {
+  GOPATH=/Users/dsyang/Dropbox/School/Spring-2014/15-440/$1
+	GOBIN=$GOPATH/bin/darwin_amd64/
+	PATH=$GOBIN:$PATH
+	export PATH
+	export GOPATH
+}
 
-#########
-## RVM ##
-#########
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+#######
+## java
+#######
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export M2_HOME=/usr/share/maven
 
 
+##########
+## android
+##########
+export ANDROID_HOME=/Users/dsyang/android-sdk-macosx
+export ANDROID_SDK=$ANDROID_HOME
+export ANDROID_TOOLS=$ANDROID_HOME/tools
+export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
+PATH="$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS:$PATH"
+
+###########
+## Research
+###########
+export BLINKY01=/Users/dsyang/Dropbox/School/Fall-2013/Research/visiblesim/BlockSimulator-MT2/applicationsBin/blinky01
+export CLMELD=/Users/dsyang/Dropbox/School/Fall-2013/Research/cl-meld
+export MELD=/Users/dsyang/Dropbox/School/Fall-2013/Research/meld
+PATH="$BLINKY01:$CLMELD:$MELD:$PATH"
+
+#############
+## LightTable
+#############
+export LT_HOME=/Users/dsyang/Sandbox/LightTable/deploy
+PATH="$LT_HOME:$PATH"
+
+###########
+## Rust
+###########
+export RUSTCPATH=/Users/dsyang/Sandbox/rust/x86_64-apple-darwin/stage1/bin
+PATH="$RUSTCPATH:$PATH"
+
+###########
+## Haskell
+###########
+PATH="/Users/dsyang/Library/Haskell/bin:$PATH"
 
 
 ########### Code ##########
@@ -105,6 +154,8 @@ fi
 if [ -n "${TMUX+2}" ]; then
     echo "Inside a Tmux session";
 else
-    echo "Starting tmux...";
-    tmux;
+    echo "TMUX NOT STARTED";
 fi
+
+# OPAM configuration
+. /Users/dsyang/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

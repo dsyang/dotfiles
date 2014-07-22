@@ -1,4 +1,3 @@
-
 ;; emacs initialization file for dsyang.
 ;; Snippets stolen from emacs prelude
 
@@ -18,6 +17,7 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (menu-bar-mode -1)
+
 ;; get the good package list
 (require 'package)
 (add-to-list 'package-archives
@@ -78,7 +78,7 @@
 
 ;; highlight the current line
 (global-hl-line-mode +1)
-(set-face-background 'hl-line "dark cyan")
+(set-face-background 'hl-line "dim grey")
 
 ;; show line numbers on the left margin
 (setq linum-format "%4d| ")
@@ -86,7 +86,7 @@
 (global-linum-mode)
 
 ;; adds vertical line at the 80 character mark
-(setq fci-rule-color "brightred")
+(setq fci-rule-color "red")
 (add-hook 'prog-mode-hook 'fci-mode)
 
 ;; clojure-mode paredit
@@ -108,7 +108,7 @@
 ;; text expansion snippets
 (require 'yasnippet)
 (yas--initialize)
-(yas/load-directory "~/.emacs.d/elpa/yasnippet-20130218.2229/snippets")
+(yas/load-directory "~/.emacs.d/elpa/yasnippet-20130820.1719/snippets")
 
 (add-hook 'js2-mode-hook 'my-jshtml-hook)
 
@@ -127,12 +127,12 @@
                               )
 )
 ;; start ensime
-(add-to-list 'load-path "~/.emacs.d/ensime_2.10.0-0.9.8.8/elisp")
-(require 'ensime)
+;(add-to-list 'load-path "~/.emacs.d/ensime_2.10.0-0.9.8.8/elisp")
+;(require 'ensime)
 ;;start ensime when scala mode starts
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
-;; set latex open program
+;;; set latex open program
 ;; setup path to find texbin
 (setenv "PATH"
         (concat
@@ -152,9 +152,15 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-;; load the theme
-(load-theme 'zenburn t)
-
+;; Update the emacs path
+(setq exec-path (split-string (getenv "PATH") path-separator))
+;; Update the emacs load path
+(push (concat (getenv "OCAML_TOPLEVEL_PATH")
+          "/../../share/emacs/site-lisp") load-path)
+;; Automatically load utop.el
+(autoload 'utop "utop" "Toplevel for OCaml" t)
+(autoload 'utop-setup-ocaml-buffer "utop" "Toplevel for OCaml" t)
+(add-hook 'tuareg-mode-hook 'utop-setup-ocaml-buffer)
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;; custom key-bindings
@@ -251,12 +257,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75" default)))
- '(fci-rule-color "red")
- '(indent-tabs-mode nil))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(region ((t (:background "color-16")))))
