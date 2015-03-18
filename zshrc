@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 
 export DISABLE_AUTO_TITLE="true"
 export COMPLETION_WAITING_DOTS="true"
-export EDITOR="emacsclient"
+export EDITOR="vim"
 
 PATH="/Users/dsyang/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 TZ="America/Detroit"
@@ -78,7 +78,7 @@ alias starttmux='tmux attach-session'
 #########
 ## golang
 #########
- GOPATH='/Users/dsyang/Dropbox (Personal)/Code/golang'
+ GOPATH='/Users/dsyang/Dropbox/Code/golang'
  PATH=/usr/local/go/bin:$PATH
  export GOPATH
  PATH=$GOPATH/bin:$PATH
@@ -94,7 +94,7 @@ alias starttmux='tmux attach-session'
 #######
 ## java
 #######
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export M2_HOME=/usr/share/maven
 
 
