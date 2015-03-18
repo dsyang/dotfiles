@@ -4,14 +4,14 @@
 ######################################################################
 
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="lambda"
-plugins=(virtualenvwrapper git autojump heroku golang)
+ZSH_THEME="dsyang"
+plugins=(autojump heroku golang)
 
 source $ZSH/oh-my-zsh.sh
 
 export DISABLE_AUTO_TITLE="true"
 export COMPLETION_WAITING_DOTS="true"
-source ~/.credentials
+export EDITOR="emacsclient"
 
 PATH="/Users/dsyang/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 TZ="America/Detroit"
@@ -45,16 +45,16 @@ bindkey "^[[3~" delete-char
 #########
 ## tex
 #########
-PATH="/usr/texbin:$PATH"
+# PATH="/usr/texbin:$PATH"
 
 
 #########
 ## sml
 #########
-PATH="/usr/local/smlnj/bin:$PATH"   #MAC
-SMLNJ_HOME="/usr/local/smlnj"       #MAC
+# PATH="/usr/local/smlnj/bin:$PATH"   #MAC
+# SMLNJ_HOME="/usr/local/smlnj"       #MAC
 
-alias smlnj='rlwrap sml'
+# alias smlnj='rlwrap sml'
 
 #########
 ## emacsclient
@@ -66,7 +66,7 @@ alias emacs='emacsclient -t'
 ########
 ## sbcl
 ########
-alias sbcl='rlwrap /usr/local/bin/sbcl'
+# alias sbcl='rlwrap /usr/local/bin/sbcl'
 
 #######
 ## tmux
@@ -78,18 +78,18 @@ alias starttmux='tmux attach-session'
 #########
 ## golang
 #########
-GOPATH=/Users/dsyang/dropbox/Code/golang
-PATH=/usr/local/go/bin:$PATH
-export GOPATH
-PATH=$GOPATH/bin:$PATH
+ GOPATH='/Users/dsyang/Dropbox (Personal)/Code/golang'
+ PATH=/usr/local/go/bin:$PATH
+ export GOPATH
+ PATH=$GOPATH/bin:$PATH
 
-setup440() {
-  GOPATH=/Users/dsyang/Dropbox/School/Spring-2014/15-440/$1
-	GOBIN=$GOPATH/bin/darwin_amd64/
-	PATH=$GOBIN:$PATH
-	export PATH
-	export GOPATH
-}
+# setup440() {
+#   GOPATH=/Users/dsyang/Dropbox/School/Spring-2014/15-440/$1
+# 	GOBIN=$GOPATH/bin/darwin_amd64/
+# 	PATH=$GOBIN:$PATH
+# 	export PATH
+# 	export GOPATH
+# }
 
 #######
 ## java
@@ -158,4 +158,10 @@ else
 fi
 
 # OPAM configuration
-. /Users/dsyang/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# . /Users/dsyang/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# added by setup_fb4a.sh
+export ANDROID_SDK=/Users/dsyang/android-sdk-macosx
+export ANDROID_NDK_REPOSITORY=/Users/dsyang/android-ndk
+export ANDROID_HOME=${ANDROID_SDK}
+export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
