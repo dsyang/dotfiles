@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+/Users/dsyang/Applications/Emacs.app/Contents/MacOS/Emacs --debug-init "$@"

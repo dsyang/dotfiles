@@ -54,14 +54,19 @@ bindkey "^[[3~" delete-char
 # PATH="/usr/local/smlnj/bin:$PATH"   #MAC
 # SMLNJ_HOME="/usr/local/smlnj"       #MAC
 
-# alias smlnj='rlwrap sml'
+alias smlnj='rlwrap sml'
 
 #########
 ## emacsclient
 #########
 
-alias startemacs='/usr/local/bin/emacs --daemon'
+# Starts
+alias wemacs='emacsclient -n -c'
 alias emacs='emacsclient -t'
+alias newemacs='/Users/dsyang/dotfiles/wemacs'
+
+#alias startemacs='/usr/local/bin/emacs --daemon'
+#alias emacs='emacsclient -t'
 
 ########
 ## sbcl
@@ -110,22 +115,22 @@ PATH="$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS:$PATH"
 ###########
 ## Research
 ###########
-export BLINKY01=/Users/dsyang/Dropbox/School/Fall-2013/Research/visiblesim/BlockSimulator-MT2/applicationsBin/blinky01
-export CLMELD=/Users/dsyang/Dropbox/School/Fall-2013/Research/cl-meld
-export MELD=/Users/dsyang/Dropbox/School/Fall-2013/Research/meld
-PATH="$BLINKY01:$CLMELD:$MELD:$PATH"
+# export BLINKY01=/Users/dsyang/Dropbox/School/Fall-2013/Research/visiblesim/BlockSimulator-MT2/applicationsBin/blinky01
+# export CLMELD=/Users/dsyang/Dropbox/School/Fall-2013/Research/cl-meld
+# export MELD=/Users/dsyang/Dropbox/School/Fall-2013/Research/meld
+# PATH="$BLINKY01:$CLMELD:$MELD:$PATH"
 
 #############
 ## LightTable
 #############
-export LT_HOME=/Users/dsyang/Sandbox/LightTable/deploy
-PATH="$LT_HOME:$PATH"
+# export LT_HOME=/Users/dsyang/Sandbox/LightTable/deploy
+# PATH="$LT_HOME:$PATH"
 
 ###########
 ## Rust
 ###########
-export RUSTCPATH=/Users/dsyang/Sandbox/rust/x86_64-apple-darwin/stage1/bin
-PATH="$RUSTCPATH:$PATH"
+# export RUSTCPATH=/Users/dsyang/Sandbox/rust/x86_64-apple-darwin/stage1/bin
+# PATH="$RUSTCPATH:$PATH"
 
 ###########
 ## Haskell
@@ -142,11 +147,11 @@ PATH="/Users/dsyang/Library/Haskell/bin:$PATH"
 #########
 ## Starting emacs only once
 #########
-if [ $(ps -ef | grep -i 'emacs --daemon' | wc -l) -lt 2 ]; then
-    startemacs
-else
-    echo "An emacs server is already running"
-fi
+# if [ $(ps -ef | grep -i 'emacs --daemon' | wc -l) -lt 2 ]; then
+#    startemacs
+# else
+#     echo "An emacs server is already running"
+# fi
 
 #########
 ## Checking if tmux is started
