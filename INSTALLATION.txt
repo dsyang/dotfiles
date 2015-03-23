@@ -19,11 +19,11 @@ mkdir /Users/dsyang/Library/KeyBindings
 ln -s /Users/dsyang/dotfiles/osx-emacs-bindings.dict /Users/dsyang/Libarary/KeyBindings/DefaultKeyBindings.dict
 
 # brew stuff
-brew install tmux    
-brew install zsh     
-brew install rlwrap  
+brew install tmux
+brew install zsh
+brew install rlwrap
 brew install autojump
-brew install wget    
+brew install wget
 brew install emacs
 brew install node
 brew install mercurial
@@ -64,9 +64,3 @@ ln -s /Users/dsyang/dotfiles/tmux/tmux.conf /Users/dsyang/.tmux.conf
 # setup firefox sync
 # log into dropbox
 # install istats menu
-
-
-
-
-
-
