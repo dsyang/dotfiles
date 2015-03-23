@@ -87,7 +87,7 @@
 
 ;; highlight the current line
 (global-hl-line-mode +1)
-(set-face-background 'hl-line "light grey")
+(set-face-background 'hl-line "black")
 
 ;; show line numbers on the left margin
 (setq linum-format "%4d| ")
