@@ -2,6 +2,7 @@ credentials
 github.cred
 emacs.d/auto-save-list
 emacs.d/elpa/archives
+emacs.d/ido.last
 emacs.d/saveplace
 *.elc
 .DS_Store
