@@ -3,7 +3,13 @@
 
 
 ;; because I like running emacs in server mode
-(server-start)
+(require 'server)
+(unless (server-running-p)
+    (server-start))
+
+;; confirm when killing emacs (useful for when you accidentally kill the GUI session)
+(setq confirm-kill-emacs 'yes-or-no-p)
+
 ;; disables annoying system bell
 (setq ring-bell-function 'ignore)
 ;; necessary for some packages to work
@@ -11,6 +17,9 @@
 
 ;; disable loading of "default.el" at startup
 (setq inhibit-default-init t)
+
+;; disable spalsh screen
+(setq inhibit-splash-screen t)
 
 ;; Lose the UI
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -61,7 +70,7 @@
 (require 'saveplace)
 
 ;; no tabs only spaces
-;;(set indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 ;;set tab with to 2 for all buffers
 (setq-default tab-width 2)
 ;;show column number on status bar
@@ -78,7 +87,7 @@
 
 ;; highlight the current line
 (global-hl-line-mode +1)
-(set-face-background 'hl-line "dim grey")
+(set-face-background 'hl-line "light grey")
 
 ;; show line numbers on the left margin
 (setq linum-format "%4d| ")
@@ -252,12 +261,18 @@
 		 (message "Arrow key navigation is disabled. Use C-f instead.")))
   (set-face-foreground 'modeline "default")
 )
+;; load a dark theme
+(load-theme 'zenburn)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(confirm-kill-emacs (quote y-or-n-p))
+ '(custom-safe-themes
+   (quote
+    ("36a309985a0f9ed1a0c3a69625802f87dee940767c9e200b89cdebdb737e5b29" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
