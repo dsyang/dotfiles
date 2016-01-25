@@ -101,36 +101,50 @@ export M2_HOME=/usr/share/maven
 ##########
 ## android
 ##########
-export ANDROID_HOME=/Users/dsyang/android-sdk-macosx
-export ANDROID_SDK=$ANDROID_HOME
-export ANDROID_TOOLS=$ANDROID_HOME/tools
-export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
-PATH="$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS:$PATH"
+export ANDROID_SDK=/opt/android_sdk
+export ANDROID_NDK_REPOSITORY=/opt/android_ndk
+export ANDROID_HOME=${ANDROID_SDK}
+export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
 
 ###########
 ## Research
 ###########
-export BLINKY01=/Users/dsyang/Dropbox/School/Fall-2013/Research/visiblesim/BlockSimulator-MT2/applicationsBin/blinky01
-export CLMELD=/Users/dsyang/Dropbox/School/Fall-2013/Research/cl-meld
-export MELD=/Users/dsyang/Dropbox/School/Fall-2013/Research/meld
-PATH="$BLINKY01:$CLMELD:$MELD:$PATH"
+# export BLINKY01=/Users/dsyang/Dropbox/School/Fall-2013/Research/visiblesim/BlockSimulator-MT2/applicationsBin/blinky01
+# export CLMELD=/Users/dsyang/Dropbox/School/Fall-2013/Research/cl-meld
+# export MELD=/Users/dsyang/Dropbox/School/Fall-2013/Research/meld
+# PATH="$BLINKY01:$CLMELD:$MELD:$PATH"
 
 #############
 ## LightTable
 #############
-export LT_HOME=/Users/dsyang/Sandbox/LightTable/deploy
-PATH="$LT_HOME:$PATH"
+# export LT_HOME=/Users/dsyang/Sandbox/LightTable/deploy
+# PATH="$LT_HOME:$PATH"
 
 ###########
 ## Rust
 ###########
-export RUSTCPATH=/Users/dsyang/Sandbox/rust/x86_64-apple-darwin/stage1/bin
-PATH="$RUSTCPATH:$PATH"
+# export RUSTCPATH=/Users/dsyang/Sandbox/rust/x86_64-apple-darwin/stage1/bin
+# PATH="$RUSTCPATH:$PATH"
 
 ###########
 ## Haskell
 ###########
-PATH="/Users/dsyang/Library/Haskell/bin:$PATH"
+# PATH="/Users/dsyang/Library/Haskell/bin:$PATH"
+
+PATH="/Users/dsyang/devtools/arcanist/bin:$PATH"
+alias bifb='buck install fb4a'
+export N5="04e50f702523af01"
+export GM="192.168.58.101:5555"
+export GM2="192.168.58.102:5555"
+export ME="ZX1B22955Z"
+export MX="T06280AM8R"
+export EVO="FA34ES903787"
+alias bigm='bifb -s $GM'
+alias bigm2='bifb -s $GM2'
+alias bin5='bifb -s $N5'
+alias bime='bifb -s $ME'
+alias bimx='bifb -s $MX'
+alias bievo='bifb -s $EVO"
 
 
 ########### Code ##########
@@ -159,9 +173,3 @@ fi
 
 # OPAM configuration
 # . /Users/dsyang/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# added by setup_fb4a.sh
-export ANDROID_SDK=/Users/dsyang/android-sdk-macosx
-export ANDROID_NDK_REPOSITORY=/Users/dsyang/android-ndk
-export ANDROID_HOME=${ANDROID_SDK}
-export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
