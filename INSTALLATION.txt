@@ -1,0 +1,66 @@
+Fresh setup instructions
+
+# Download and set up xcode
+
+# Get my dotfiles
+git clone https://www.github.com/dsyang/dotfiles
+
+# install homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install homebrew cask
+brew install caskroom/cask/brew-cask
+
+# run osx to setup things
+./dotfiles/osx
+
+# setup readline bindings for osx
+mkdir /Users/dsyang/Library/KeyBindings
+ln -s /Users/dsyang/dotfiles/osx-emacs-bindings.dict /Users/dsyang/Libarary/KeyBindings/DefaultKeyBindings.dict
+
+# brew stuff
+brew install tmux
+brew install zsh
+brew install rlwrap
+brew install autojump
+brew install wget
+brew install emacs
+brew install node
+brew install mercurial
+
+# brew cask stuff
+brew cask install bettertouchtool
+brew cask install vlc
+brew cask install iterm2
+brew cask install flux
+brew cask install dropbox
+brew cask install selfcontrol
+brew cask install java
+brew cask install sublime-text
+brew cask install subl
+brew cask install android-studio
+brew cask install virtualbox
+brew cask install genymotion
+brew cask install google-chrome
+brew cask install chromecast
+brew cask install kindle
+brew cask install handbrake
+brew cask install flash
+brew cask install utorrent
+brew cask install steam
+
+# install oh-my-zsh and custom theme
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+cp ~/dotfiles/dsyang.zsh-theme ~/.oh-my-zsh/themes
+
+# link everything
+ln -s /Users/dsyang/dotfiles/zshrc /Users/dsyang/.zshrc
+ln -s /Users/dsyang/dotfiles/emacs.d /Users/dsyang/.emacs.d
+ln -s /Users/dsyang/dotfiles/gitconfig /Users/dsyang/.gitconfig
+ln -s /Users/dsyang/dotfiles/tmux/tmux.d /Users/dsyang/.tmux.d
+ln -s /Users/dsyang/dotfiles/tmux/tmux.conf /Users/dsyang/.tmux.conf
+
+# import bettertouchtool settings
+# setup firefox sync
+# log into dropbox
+# install istats menu

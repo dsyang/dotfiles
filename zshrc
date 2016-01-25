@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 
 export DISABLE_AUTO_TITLE="true"
 export COMPLETION_WAITING_DOTS="true"
-export EDITOR="emacsclient"
+export EDITOR="vim"
 
 PATH="/Users/dsyang/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 TZ="America/Detroit"
@@ -54,14 +54,19 @@ bindkey "^[[3~" delete-char
 # PATH="/usr/local/smlnj/bin:$PATH"   #MAC
 # SMLNJ_HOME="/usr/local/smlnj"       #MAC
 
-# alias smlnj='rlwrap sml'
+alias smlnj='rlwrap sml'
 
 #########
 ## emacsclient
 #########
 
-alias startemacs='/usr/local/bin/emacs --daemon'
+# Starts
+alias wemacs='emacsclient -n -c'
 alias emacs='emacsclient -t'
+alias newemacs='/Users/dsyang/dotfiles/wemacs'
+
+#alias startemacs='/usr/local/bin/emacs --daemon'
+#alias emacs='emacsclient -t'
 
 ########
 ## sbcl
@@ -78,7 +83,7 @@ alias starttmux='tmux attach-session'
 #########
 ## golang
 #########
- GOPATH='/Users/dsyang/Dropbox (Personal)/Code/golang'
+ GOPATH='/Users/dsyang/Dropbox/Code/golang'
  PATH=/usr/local/go/bin:$PATH
  export GOPATH
  PATH=$GOPATH/bin:$PATH
@@ -94,7 +99,7 @@ alias starttmux='tmux attach-session'
 #######
 ## java
 #######
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export M2_HOME=/usr/share/maven
 
 
@@ -156,11 +161,11 @@ alias bievo='bifb -s $EVO"
 #########
 ## Starting emacs only once
 #########
-if [ $(ps -ef | grep -i 'emacs --daemon' | wc -l) -lt 2 ]; then
-    startemacs
-else
-    echo "An emacs server is already running"
-fi
+# if [ $(ps -ef | grep -i 'emacs --daemon' | wc -l) -lt 2 ]; then
+#    startemacs
+# else
+#     echo "An emacs server is already running"
+# fi
 
 #########
 ## Checking if tmux is started
