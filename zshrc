@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 
 export DISABLE_AUTO_TITLE="true"
 export COMPLETION_WAITING_DOTS="true"
-export EDITOR="vim"
+export EDITOR="emacsclient"
 
 PATH="/Users/dsyang/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 TZ="America/Detroit"
@@ -65,7 +65,7 @@ alias wemacs='emacsclient -n -c'
 alias emacs='emacsclient -t'
 alias newemacs='/Users/dsyang/dotfiles/wemacs'
 
-#alias startemacs='/usr/local/bin/emacs --daemon'
+alias startemacs='/usr/local/bin/emacs --daemon'
 #alias emacs='emacsclient -t'
 
 ########
