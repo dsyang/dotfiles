@@ -1,5 +1,10 @@
 Fresh setup instructions
 
+# System preferences
+ - keyboard settings: capslock -> control
+ - mouse tracking speed. 3 from fastest. scrolling speed 1 from fastest. trackpad 1 from fastest
+ - trackpad: speed 1 from fastest. uncheck scroll direct natural, swipe between pages, swipe between fullscreen, mission control
+
 # Download and set up xcode
 
 # Get my dotfiles
@@ -16,7 +21,7 @@ brew install caskroom/cask/brew-cask
 
 # setup readline bindings for osx
 mkdir /Users/dsyang/Library/KeyBindings
-ln -s /Users/dsyang/dotfiles/osx-emacs-bindings.dict /Users/dsyang/Libarary/KeyBindings/DefaultKeyBindings.dict
+ln -s /Users/dsyang/dotfiles/osx-emacs-bindings.dict /Users/dsyang/Library/KeyBindings/DefaultKeyBindings.dict
 
 # brew stuff
 brew install tmux
@@ -59,6 +64,9 @@ ln -s /Users/dsyang/dotfiles/emacs.d /Users/dsyang/.emacs.d
 ln -s /Users/dsyang/dotfiles/gitconfig /Users/dsyang/.gitconfig
 ln -s /Users/dsyang/dotfiles/tmux/tmux.d /Users/dsyang/.tmux.d
 ln -s /Users/dsyang/dotfiles/tmux/tmux.conf /Users/dsyang/.tmux.conf
+
+# change iterm settings: 
+profile -> keys -> left option as +Esc
 
 # import bettertouchtool settings
 # setup firefox sync
