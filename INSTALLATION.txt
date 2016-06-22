@@ -53,6 +53,7 @@ brew cask install handbrake
 brew cask install flash
 brew cask install utorrent
 brew cask install steam
+brew cask install istat-menus
 
 # install oh-my-zsh and custom theme
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
@@ -65,10 +66,12 @@ ln -s /Users/dsyang/dotfiles/gitconfig /Users/dsyang/.gitconfig
 ln -s /Users/dsyang/dotfiles/tmux/tmux.d /Users/dsyang/.tmux.d
 ln -s /Users/dsyang/dotfiles/tmux/tmux.conf /Users/dsyang/.tmux.conf
 
-# change iterm settings: 
+# change iterm settings:
 profile -> keys -> left option as +Esc
+
+# install better fonts
+mv /Users/dsyang/Dropbox/Consolas/*.ttf /Library/Fonts
 
 # import bettertouchtool settings
 # setup firefox sync
 # log into dropbox
-# install istats menu

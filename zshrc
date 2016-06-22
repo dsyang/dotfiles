@@ -36,6 +36,9 @@ alias freespace='df -H'
 ##alias tmux='tmux attach'
 alias sftp='rlwrap sftp'
 
+dash() {
+  open dash://$*;
+}
 
 #for emacs-like bindings
 bindkey -e
@@ -128,8 +131,19 @@ export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
 ###########
 ## Rust
 ###########
-# export RUSTCPATH=/Users/dsyang/Sandbox/rust/x86_64-apple-darwin/stage1/bin
-# PATH="$RUSTCPATH:$PATH"
+PATH="/Users/dsyang/.cargo/bin:$PATH"
+export RUST_SRC_PATH="/Users/dsyang/Sandbox/rustc-1.8.0/src"
+
+###########
+## Ocaml
+###########
+eval `opam config env`
+
+###########
+## Groovy
+###########
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
 
 ###########
 ## Haskell
