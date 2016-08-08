@@ -151,25 +151,42 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 # PATH="/Users/dsyang/Library/Haskell/bin:$PATH"
 
 PATH="/Users/dsyang/devtools/arcanist/bin:$PATH"
+alias nanoc='arc nano-check'
 alias bifb='buck install fb4a'
-export N5="04e50f702523af01"
-export GM="192.168.58.101:5555"
-export GM2="192.168.58.102:5555"
-export ME="ZX1B22955Z"
-export MX="T06280AM8R"
-export EVO="FA34ES903787"
+alias nbifb='nanoc && bifb'
+alias bifbx='bifb -x'
+export S6W="03157df332350d08"
+export S6B="04157df465570322"
+export GM="192.168.56.101:5555"
+export GM2="192.168.56.102:5555"
 alias bigm='bifb -s $GM'
 alias bigm2='bifb -s $GM2'
-alias bin5='bifb -s $N5'
-alias bime='bifb -s $ME'
-alias bimx='bifb -s $MX'
-alias bievo='bifb -s $EVO"
+alias bifbs6w='bifb -s $S6W'
+alias bifbs6b='bifb -s $S6B'
+
 
 
 ########### Code ##########
 ## - Makes sure you only start one emacs daemon
 ## - Starts Tmux if it wasn't started
 ###########################
+
+#########
+## Changing the prompt if in fbsource2
+#########
+precmd() {
+    PREFIX="_fbsource2_ "
+    if [[ $PWD == /Users/dsyang/fbsource2* ]] ; then
+        if [[ $PROMPT =~ $PREFIX* ]] ; then
+
+        else
+            PROMPT="$PREFIX $PROMPT"
+        fi
+    else
+        PROMPT="$OPROMPT"
+    fi
+}
+
 
 
 #########
