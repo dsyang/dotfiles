@@ -11,7 +11,8 @@ source $ZSH/oh-my-zsh.sh
 
 export DISABLE_AUTO_TITLE="true"
 export COMPLETION_WAITING_DOTS="true"
-export EDITOR="emacsclient"
+export EDITOR="emacs"
+export ALTERNATE_EDITOR="vim"
 
 PATH="/Users/dsyang/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 TZ="America/Detroit"
@@ -104,6 +105,7 @@ alias starttmux='tmux attach-session'
 #######
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export M2_HOME=/usr/share/maven
+export PATH="${JAVA_HOME}/bin:${PATH}"
 
 
 ##########
@@ -150,6 +152,13 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 ###########
 # PATH="/Users/dsyang/Library/Haskell/bin:$PATH"
 
+###########
+## Anaconda/Jupyter
+###########
+
+# added by Anaconda2 4.1.1 installer
+export PATH="$PATH:/Users/dsyang/anaconda2/bin"
+
 PATH="/Users/dsyang/devtools/arcanist/bin:$PATH"
 alias nanoc='arc nano-check'
 alias bifb='buck install fb4a'
@@ -185,8 +194,13 @@ precmd() {
     else
         PROMPT="$OPROMPT"
     fi
-}
+    if [[ $PWD == /Users/dsyang/buck* ]] ; then
+        export NO_BUCKD=1
+    else
+        unset NO_BUCKD
+    fi
 
+}
 
 
 #########

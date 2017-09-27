@@ -20,3 +20,5 @@
 	pager = less -X -F
 [credential]
 	helper = osxkeychain
+[merge]
+  ff = only
