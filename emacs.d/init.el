@@ -115,9 +115,9 @@
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; text expansion snippets
-(require 'yasnippet)
-(yas--initialize)
-(yas/load-directory "~/.emacs.d/elpa/yasnippet-20130820.1719/snippets")
+;; (require 'yasnippet)
+;; (yas--initialize)
+;; (yas/load-directory "~/.emacs.d/elpa/yasnippet-20130820.1719/snippets")
 
 (add-hook 'js2-mode-hook 'my-jshtml-hook)
 
