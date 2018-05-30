@@ -139,7 +139,7 @@ export RUST_SRC_PATH="/Users/dsyang/Sandbox/rustc-1.8.0/src"
 ###########
 ## Ocaml
 ###########
-eval `opam config env`
+# eval `opam config env`
 
 ###########
 ## Groovy
@@ -198,24 +198,24 @@ alias xhdpi='/Users/dsyang/Sandbox/start_xhdpi_emulator&'
 #########
 ## Changing the prompt if in fbsource2
 #########
-precmd() {
-    MY_PREFIX="_fbsource2_ "
-    if [[ $PWD == /Users/dsyang/fbsource2* ]] ; then
-        if [[ $PROMPT =~ $MY_PREFIX* ]] ; then
-
-        else
-            PROMPT="$MY_PREFIX $PROMPT"
-        fi
-    else
-        PROMPT="$OPROMPT"
-    fi
-    if [[ $PWD == /Users/dsyang/buck* ]] ; then
-        export NO_BUCKD=1
-    else
-        unset NO_BUCKD
-    fi
-
-}
+# precmd() {
+#     MY_PREFIX="_fbsource2_ "
+#     if [[ $PWD == /Users/dsyang/fbsource2* ]] ; then
+#         if [[ $PROMPT =~ $MY_PREFIX* ]] ; then
+# 
+#         else
+#             PROMPT="$MY_PREFIX $PROMPT"
+#         fi
+#     else
+#         PROMPT="$OPROMPT"
+#     fi
+#     if [[ $PWD == /Users/dsyang/buck* ]] ; then
+#         export NO_BUCKD=1
+#     else
+#         unset NO_BUCKD
+#     fi
+# 
+# }
 
 
 #########
@@ -230,11 +230,11 @@ precmd() {
 #########
 ## Checking if tmux is started
 #########
-if [ -n "${TMUX+2}" ]; then
-    echo "Inside a Tmux session";
-else
-    echo "TMUX NOT STARTED";
-fi
+# if [ -n "${TMUX+2}" ]; then
+#     echo "Inside a Tmux session";
+# else
+#     echo "TMUX NOT STARTED";
+# fi
 
 # OPAM configuration
 # . /Users/dsyang/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
