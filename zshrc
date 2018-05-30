@@ -159,6 +159,18 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 # added by Anaconda2 4.1.1 installer
 export PATH="$PATH:/Users/dsyang/anaconda2/bin"
 
+###########
+## Google Cloud Platform
+###########
+
+export PATH="$PATH:/Users/dsyang/bin/google-cloud-sdk/bin"
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/dsyang/Sandbox/keys/gmail-amazon-forwarding-9acad2a973c8.json"
+
+
+###########
+## Work
+###########
+
 PATH="/Users/dsyang/devtools/arcanist/bin:$PATH"
 alias nanoc='arc nano-check'
 alias bifb='buck install fb4a'
@@ -173,6 +185,9 @@ alias bigm2='bifb -s $GM2'
 alias bifbs6w='bifb -s $S6W'
 alias bifbs6b='bifb -s $S6B'
 
+alias pullios='arc pull -b //Libraries/FIGUIKit:FIGUIKitServerSnapshotTestsUITestBed'
+alias focusios='arc focus -b //Libraries/FIGUIKit:FIGUIKitServerSnapshotTestsUITestBed FBUITestBedApp FBUITestBedSupport FBLog'
+alias xhdpi='/Users/dsyang/Sandbox/start_xhdpi_emulator&'
 
 
 ########### Code ##########
@@ -184,12 +199,12 @@ alias bifbs6b='bifb -s $S6B'
 ## Changing the prompt if in fbsource2
 #########
 precmd() {
-    PREFIX="_fbsource2_ "
+    MY_PREFIX="_fbsource2_ "
     if [[ $PWD == /Users/dsyang/fbsource2* ]] ; then
-        if [[ $PROMPT =~ $PREFIX* ]] ; then
+        if [[ $PROMPT =~ $MY_PREFIX* ]] ; then
 
         else
-            PROMPT="$PREFIX $PROMPT"
+            PROMPT="$MY_PREFIX $PROMPT"
         fi
     else
         PROMPT="$OPROMPT"
@@ -223,3 +238,13 @@ fi
 
 # OPAM configuration
 # . /Users/dsyang/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+export FBANDROID_DIR=/Users/dsyang/fbsource/fbandroid
+alias quicklog_update=/Users/dsyang/fbsource/fbandroid/scripts/quicklog/quicklog_update.sh
+alias qlu=quicklog_update
+
+# Make t work from fbandroid root
+alias t=scripts/test_runner/test_runner.py
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
