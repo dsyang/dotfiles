@@ -115,6 +115,7 @@ export ANDROID_SDK=/opt/android_sdk
 export ANDROID_NDK_REPOSITORY=/opt/android_ndk
 export ANDROID_HOME=${ANDROID_SDK}
 export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
+export PATH="/Users/dsyang/bin/build-tools:${PATH}"
 
 ###########
 ## Research
@@ -187,8 +188,9 @@ alias bifbs6b='bifb -s $S6B'
 
 alias pullios='arc pull -b //Libraries/FIGUIKit:FIGUIKitServerSnapshotTestsUITestBed'
 alias focusios='arc focus -b //Libraries/FIGUIKit:FIGUIKitServerSnapshotTestsUITestBed FBUITestBedApp FBUITestBedSupport FBLog'
-alias xhdpi='/Users/dsyang/Sandbox/start_xhdpi_emulator&'
-
+#alias xhdpi='/Users/dsyang/Sandbox/start_xhdpi_emulator&'
+alias xhdpi='/opt/android_sdk/emulator/emulator @Galaxy_Nexus_API_26 &'
+alias jfs='arc lint --take GOOGLEJAVAFORMAT,BUCKFORMAT --apply-patches && jf s'
 
 ########### Code ##########
 ## - Makes sure you only start one emacs daemon
@@ -202,7 +204,7 @@ alias xhdpi='/Users/dsyang/Sandbox/start_xhdpi_emulator&'
 #     MY_PREFIX="_fbsource2_ "
 #     if [[ $PWD == /Users/dsyang/fbsource2* ]] ; then
 #         if [[ $PROMPT =~ $MY_PREFIX* ]] ; then
-# 
+#
 #         else
 #             PROMPT="$MY_PREFIX $PROMPT"
 #         fi
@@ -214,7 +216,7 @@ alias xhdpi='/Users/dsyang/Sandbox/start_xhdpi_emulator&'
 #     else
 #         unset NO_BUCKD
 #     fi
-# 
+#
 # }
 
 
@@ -248,3 +250,12 @@ alias t=scripts/test_runner/test_runner.py
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# added by setup_fb4a.sh
+export ANDROID_SDK=/opt/android_sdk
+export ANDROID_NDK_REPOSITORY=/opt/android_ndk
+export ANDROID_HOME=${ANDROID_SDK}
+export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
+
+# setup launchctl to be able to focus every day
+launchctl setenv PATH $PATH
