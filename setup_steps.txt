@@ -5,7 +5,8 @@
 ##############
 
 # Run dsyang/dotfiles/osx
-
+# prevent apple bluetooth keyboards fro autopairing on wire
+sudo defaults write /Library/Preferences/com.apple.Bluetooth.plist DontPageAudioDevices 1
 
 ####################
 #  Install last pass
