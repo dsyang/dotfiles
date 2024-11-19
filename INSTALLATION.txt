@@ -19,7 +19,7 @@ git clone https://www.github.com/dsyang/dotfiles
 ./dotfiles/osx
 
 # install homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # install homebrew cask
 brew install caskroom/cask/brew-cask
