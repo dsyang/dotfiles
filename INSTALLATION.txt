@@ -63,9 +63,6 @@ brew cask install utorrent
 brew cask install steam
 brew cask install istat-menus
 
-# install oh-my-zsh and custom theme
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-cp ~/dotfiles/dsyang.zsh-theme ~/.oh-my-zsh/themes
 
 # link everything
 ln -s /Users/dsyang/dotfiles/zshrc /Users/dsyang/.zshrc
@@ -73,6 +70,10 @@ ln -s /Users/dsyang/dotfiles/emacs.d /Users/dsyang/.emacs.d
 ln -s /Users/dsyang/dotfiles/gitconfig /Users/dsyang/.gitconfig
 ln -s /Users/dsyang/dotfiles/tmux/tmux.d /Users/dsyang/.tmux.d
 ln -s /Users/dsyang/dotfiles/tmux/tmux.conf /Users/dsyang/.tmux.conf
+
+# install oh-my-zsh and custom theme
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+cp ~/dotfiles/dsyang.zsh-theme ~/.oh-my-zsh/themes
 
 # change iterm settings:
 profile -> keys -> left option as +Esc
