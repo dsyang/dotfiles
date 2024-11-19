@@ -6,10 +6,17 @@ Fresh setup instructions
  - trackpad: speed 1 from fastest. uncheck scroll direct natural, swipe between pages, swipe between fullscreen, mission control
  - click wallpaper to reveal desktop only in stage manager
 
-# Download and set up xcode
+# Download and set up
+ - get 1password
+ - set up 1password ssh agent in settings -> developer
+ - run `git` and setup commandline tools
+ - ssh -T git@github.com to check
 
 # Get my dotfiles
 git clone https://www.github.com/dsyang/dotfiles
+
+# run osx to setup things
+./dotfiles/osx
 
 # install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
