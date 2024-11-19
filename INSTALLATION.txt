@@ -4,7 +4,9 @@ Fresh setup instructions
  - keyboard settings: capslock -> control
  - mouse tracking speed. 3 from fastest. scrolling speed 1 from fastest. trackpad 1 from fastest
  - trackpad: speed 1 from fastest. uncheck scroll direct natural, swipe between pages, swipe between fullscreen, mission control
- - click wallpaper to reveal desktop only in stage manager
+ - stage manager: click wallpaper to reveal desktop only in stage manager
+ - dock: hide suggested and recent from dock
+ - dock: automatically show/hide
 
 # Download and set up
  - get 1password
